@@ -121,6 +121,10 @@ input#calculate {
   margin-top: 80px;
 }
 
+a {
+  color: #f8f9fa ;
+}
+
 #how-to p {
   font-size: 18px;
 }
