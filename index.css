@@ -73,22 +73,30 @@ input#calculate {
 }
 
 
-#chances {
+#chances, .piece-table {
   font-family: 'Roboto', sans-serif;
   border-collapse: collapse;
   width: 50%;
   margin-left: calc(25vw - 20px);
   font-size: 28px;
 }
-#chances td, #chances th {
+
+#chances td, #chances th, .piece-table td, .piece-table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
-#chances tr:nth-child(even) {
+
+
+#chances tr:nth-child(even), .piece-table tr:nth-child(even)  {
   background-color: #f2f2f2;
   color: #343a40;
 }
-#chances th {
+.piece-table {
+  display: none;
+  cursor: pointer;
+}
+
+#chances th, .piece-table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -103,6 +111,14 @@ input#calculate {
 
 #reroll-number {
  color: #FFD700;
+}
+
+#show-costs {
+  width: 280px;
+/*  background: #1e3799;*/
+  margin-left: 0px;
+  /*color: white;*/
+  margin-top: 80px;
 }
 
 #how-to p {

@@ -105,10 +105,22 @@ function removeUnit() {
   } 
 }
 
+function showCosts() {
+  $('.piece-table').toggle()
+  if ($('.piece-table:visible').length > 0) {
+    $('#show-costs').text("Hide Unit Costs")
+  } else {
+    $('#show-costs').text("Show Unit Costs")
+  }
+
+}
+
 $( document ).ready(function() {
       $('#calculate').on('click', calculate)
       $('#add-unit').on('click', addUnit)
       $('#remove-unit').on('click', removeUnit)
+      $('#show-costs').on('click', showCosts)
+
 });
 
 
