@@ -17,36 +17,39 @@ tier_names = {1 : "common", 2 : "uncommon", 3 : "rare", 4 : "mythic", 5: "legend
 
 function get_chances(unit_costs, courier_lvl, units_taken=[0]) {
 	$('.chance-row, .spend-all').remove()
+  // reset the table and result messages
+
   units = $('.unit-cost').length
-  
-  console.log(unit_costs)
-  console.log(units_taken)
-
-  for (reroll_count=0; reroll_count < 51; reroll_count++ ) {   
 
 
-    var chance = 0
-    var base_chance = 0
-    for (unit_index=0; unit_index < units; unit_index++) {
+  for (reroll_count=0; reroll_count < 51; reroll_count++ ) { //go through 50 rerolls  
+
+    var chance = 0 // cumulative chance to hit any unit as you reroll
+    var base_chance = 0 // the chance on one reroll
+    
+    for (unit_index=0; unit_index < units; unit_index++) { // loop through each unit being searched for
       if (unit_costs[unit_index] == "") {
         continue
-      }
-      tier_name = tier_names[unit_costs[unit_index]]
+      } // skip this unit if they left the field blank
       
-      unit_pool = unit_pools[tier_name]
-      taken = units_taken[unit_index]
+      tier_name = tier_names[unit_costs[unit_index]] // get the rarity name
+
+      unit_pool = unit_pools[tier_name] // get the number of units
+      taken = units_taken[unit_index] // get the number of units taken out of pool
       
-      chance += ((1 / tiers[tier_name]) * (tier_chances[courier_lvl][tier_name] / 100) * 5) * (unit_pool - taken) / unit_pool
-      console.log(chance)
+      chance += ((1 / tiers[tier_name]) * (tier_chances[courier_lvl][tier_name] / 100) * 5) * (unit_pool - taken) / unit_pool // add the chance of hitting this unit in the current 5 unit roll
+
     } 
     
     chance = 1 - Math.pow((1 - chance), reroll_count + 1)
-    chance = chance * 100
+    chance = chance * 100 
   	appendRow(reroll_count, chance)
+    
     if (reroll_count == 0) {
       base_chance = chance
-      $('#result').show()
-        $('#reroll-number').show().text( (1 / (chance / 100) * 2).toString().slice(0,5) + " gold")
+     
+     $('#result').show()
+        $('#reroll-number').show().text( Math.floor((1 / (chance / 100) * 2)).toString() + " gold")
        if ($('.gold-to-spend').val() != "") {
           rerolls = parseInt($('.gold-to-spend').val()) / 2
           chances_of_hitting = (1 - Math.pow((1 - (base_chance / 100)), rerolls + 1)) * 100
