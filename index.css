@@ -1,0 +1,110 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #343a40;
+  color: #f8f9fa;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 5vh;
+  width: 100%;
+}
+#content-container {
+  width: calc(100vw - 40px);
+  margin-left: 20px;
+}
+
+div.info {
+  font-size: 32px;
+  margin-top: 32px;
+}
+
+div.info span {
+  width: 280px;
+  display: inline-block;
+}
+
+.info div {
+/*  margin-top: 20px;*/
+}
+
+.info button, .info input {
+  height: 100%;
+  margin-top: 20px;
+}
+
+#add-unit {
+  background: #2ed573;
+  color: #f8f9fa ;
+}
+
+#remove-unit {
+  background: #ff4757;
+  color: #f8f9fa ;
+  display: none;
+}
+
+.info button:hover {
+  cursor: pointer;
+}
+
+input, button {
+  height: 32px;
+  margin-left: 20px;
+  width: 140px;
+  border-radius: 5px;
+  font-size: 32px;
+  padding: 4px 10px;
+  border: none;
+}
+
+button {
+  width: 180px;
+}
+
+
+
+input#calculate {
+  height: 48px;
+  padding: 6px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+
+#chances {
+  font-family: 'Roboto', sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: calc(25vw - 20px);
+  font-size: 28px;
+}
+#chances td, #chances th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#chances tr:nth-child(even) {
+  background-color: #f2f2f2;
+  color: #343a40;
+}
+#chances th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #70a1ff;
+  color: white;
+}
+
+#result {
+  display: none;
+  font-size: 32px;
+}
+
+#reroll-number {
+ color: #FFD700;
+}
+
+#how-to p {
+  font-size: 18px;
+}

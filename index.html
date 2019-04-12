@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script
+	  src="https://code.jquery.com/jquery-3.4.0.min.js"
+	  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+	  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="index.js"></script>
+</head>
+<body>
+
+<div id="content-container">
+	<h1>
+		Autochess Unit Chances Calculator
+	</h1>
+	<div class="info">
+		<div>
+	  		<span>Courier Level</span>  <input type="text" name="courierLevel" class="courier-level">
+	 	</div>
+	 	<div class="costs">  
+	  		<span>Unit Cost(s)</span>  <input type="text" name="unitCost-1" class="unit-cost"> <button id="add-unit">Add</button> <button id="remove-unit">Remove</button>
+	  	</div>
+		<div class="taken">
+		  <span># Units Out of Pool</span>  <input type="text" name="unitsTaken-1" placeholder="0" class="units-taken" value="0">
+		</div>
+		<div>
+		  <span>Gold to Spend</span>  <input type="text" name="goldToSpend" placeholder="optional" class="gold-to-spend">
+		</div>
+	  
+	  <input type="submit" text="submit" id="calculate">
+	</div>
+	<div id="result">
+	  <p>On average, you need to spend <span id="reroll-number"></span> on rerolls before finding a unit.</p>
+	</div>
+	<table id="chances">
+	  <tr id="header-row">
+	    <th>Rerolls</th>
+	    <th>% Chance to find</th>
+	  </tr>  
+	</table>
+
+	<div id="how-to">
+		<h2>How to Use</h2>
+
+		<p> 
+
+			This webapp calculates your chances of finding a unit given your courier level, the unit cost, and the number of units bought out. Additionally if you want to see your chances of hitting a unit given a certain amount of gold, you can fill in the gold to spend parameter.<br><br>
+
+			You can view your chances of finding more than one unit at a time by clicking the green Add button. Just fill in the unit cost in the field that pops up. A corresponding field for the number of units bought out will appear directly underneath. In this case, the table will show your chances of hitting any of the units for each reroll.<br><br>
+
+			You can see more information about unit chances here in the <a href="https://dotaautochess.gamepedia.com/Chess_pieces">AutoChess Wiki</a>.
+		</p>
+	</div> 
+</div>
+</body>
+</html>
