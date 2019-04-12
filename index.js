@@ -1,4 +1,4 @@
-tiers = {"common" : 13, "uncommon" : 14, "rare" : 12, "mythic" : 11, "legendary" : 7}
+tiers = {"common" : 13, "uncommon" : 14, "rare" : 13, "mythic" : 11, "legendary" : 7}
 unit_pools = {"common" : 45, "uncommon" : 30, "rare" : 25, "mythic" : 15, "legendary" : 10}
 tier_chances =  {
     1 : {"common" : 100, "uncommon" : 0, "rare" : 0, "mythic" : 0, "legendary" : 0},
